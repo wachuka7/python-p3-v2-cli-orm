@@ -69,9 +69,14 @@ def find_employee_by_id():
     print(employee) if employee else print(f"Employee {id_} not found")
 
 def create_employee():
-    pass
-
-
+    name = input("Enter the employee's name: ")
+    position = input("Enter the employee's position: ")
+    department_id=input("Enter the employee's department ID: ")
+    try:
+        employee = Employee.create(name, position, department_id)
+        print(f'Success: {employee}')
+    except Exception as exc:
+        print("Error creating employee: ", exc)
 def update_employee():
     pass
 
